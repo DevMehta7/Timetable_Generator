@@ -1,0 +1,43 @@
+<h1>Hello Dev</h1>
+
+<!--{{obj_list_bth}}-->
+<b>ALL SUBJECTS</b>
+<ol>
+{% for sub in obj_list_sub %}
+    <li>
+        {{sub.name}}
+
+    </li>
+
+{% endfor %}
+</ol>
+
+<b>FACULTIES TEACHING SUBJECTS</b>
+<ol>
+{% for fac in obj_list_fac %}
+   <li>
+       {{ fac.name }}--
+       {% for sub in fac.subject.all %}
+            {{sub}}
+       {% endfor %}
+
+   </li>
+{% endfor %}
+</ol>
+
+<b>Subjects tought by Jay Shah </b>--
+<ol>
+
+{% for jay in jay_sub %}
+    <li>{{jay.short_name}}</li>
+{% endfor %}
+</ol>
+
+<br>
+
+<b>ajava teaching faculties</b>--
+<ol>
+{% for ajava_fac in ajava  %}
+    <li>{{ajava_fac.name}}</li>
+{% endfor %}
+</ol>
