@@ -25,7 +25,7 @@
 {% endfor %}
 </ol>
 
-<b>Subjects tought by Jay Shah </b>--
+<b>Subjects taught by Jay Shah </b>--
 <ol>
 
 {% for jay in jay_sub %}
@@ -35,9 +35,26 @@
 
 <br>
 
-<b>ajava teaching faculties</b>--
+<b>Ajava teaching faculties</b>--
 <ol>
 {% for ajava_fac in ajava  %}
     <li>{{ajava_fac.name}}</li>
 {% endfor %}
 </ol>
+
+<b>Shift 1 details</b>
+<br>
+{% for sft in shift_1 %}
+    from_time:{{sft.from_time}}<br>
+    to_time:{{sft.to_time}}<br>
+    break_from_time: {{sft.break_from_time}}<br>
+    break_to_time: {{sft.break_to_time}}<br>
+{% endfor %}
+<br>
+
+<!--<b>Unallocated ajava faculty</b>-->
+<!--<br>-->
+<!--{% for i in unall_ajava %}-->
+    <!--Name: {{i.name}}<br>-->
+<!--{% endfor %}-->
+<!--<br>-->
