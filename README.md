@@ -1,8 +1,8 @@
 # Timetable_Generator
-Automatic Timetable Generator
+Automatic Timetable GeneratoTimetable Generatorr
 
 INTRO:
-It is basically our diploma final year project based on python's Django framework.
+Timetable Generator is basically our diploma final year project based on python's Django framework.
 In our college, the timetable was use to build manually so we decide to attempt that task 
 
 WORKING:
