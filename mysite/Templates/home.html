@@ -1,5 +1,11 @@
 <h1>Hello Dev</h1>
 
+<form action='unallocate' method='GET' target="_blank">
+    Unallocate every resource :
+    <button type='submit'> click here </button>
+</form>
+
+
 <!--{{obj_list_bth}}-->
 <b>ALL SUBJECTS</b>
 <ol>
@@ -24,6 +30,16 @@
    </li>
 {% endfor %}
 </ol>
+
+<b>Unallocated faculties </b>--
+<ol>
+
+{% for fac in unalloc_fac %}
+    <li>{{fac.name}}</li>
+{% endfor %}
+</ol>
+
+<br>
 
 <b>Subjects taught by Jay Shah </b>--
 <ol>
@@ -52,9 +68,11 @@
 {% endfor %}
 <br>
 
+
 <!--<b>Unallocated ajava faculty</b>-->
 <!--<br>-->
 <!--{% for i in unall_ajava %}-->
     <!--Name: {{i.name}}<br>-->
 <!--{% endfor %}-->
 <!--<br>-->
+

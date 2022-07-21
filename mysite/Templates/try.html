@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>try_page</title>
+</head>
+<body>
+    
+    <table border="10px"> 
+        <hr> 
+            <td>day</td>  
+            <td>Start_time</td>
+            <td>End_time</td>
+            <td>subject</td>
+            <td>Type</td>
+            <td>faculty</td>
+            <td>classroom</td>
+            <td>lab</td>
+            <td>div</td>
+            <td>batch</td>
+            
+        </hr>  
+        {% for each in tt %}
+        <tr>
+            <td>{{each.day}}</td>
+            <td>{{each.slt_start}}</td>
+            <td>{{each.slt_end}}</td>
+            <td>{{each.subject}}</td>
+            <td>{{each.laborlec}}</td>
+            <td>{{each.faculty}}</td>
+            <td>{{each.classroom}}</td>
+            <td>{{each.lab}}</td>
+            <td>{{each.div}}</td>
+            <td>{{each.batch}}</td>  
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

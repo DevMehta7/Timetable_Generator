@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from . models import ShiftMaster, DayMaster, TimetableMaster, SlotMaster, SemMaster, Classroom, LabMaster,\
+from . models import ShiftMaster, DayMaster, TimetableMaster, SemMaster, Classroom, LabMaster,\
     SubjectMaster, DivisionMaster, BatchMaster, FacultyMaster
 
 admin.site.register(ShiftMaster)
@@ -14,4 +14,3 @@ admin.site.register(BatchMaster)
 admin.site.register(FacultyMaster)
 admin.site.register(DayMaster)
 admin.site.register(TimetableMaster)
-admin.site.register(SlotMaster)

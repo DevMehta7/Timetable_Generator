@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Time Table Generation{% endblock %}
+
+{% block content %}
+    <!-- home -->
+    <section class="home py-5" id="home">
+        <div class="container-lg">
+            <div class="row min-vh-100 align-items-center align-content-center">
+                <div class="col-md-6 mt-5 mt-md-0">
+                    <div class="home-img text-center">
+                        <img
+                                src="{% static 'img/timetable-mini-2.jpg' %}"
+                                class="rounded-circle mw-100"
+                                alt="time table image"
+                        />
+                    </div>
+                </div>
+                <div class="col-md-6 mt-5 mt-md-0 order-md-first">
+                    <div class="home-text">
+                        <h1 class="text-danger text-uppercase fs-1 fw-bold" id="heading">
+                            Generating Your Time Table
+                        </h1>
+                        <h2 class="fs-4 mb-3" id="description" hidden>Please Wait ... </h2>
+                        <div class="spinner-border text-danger" id="spinner" hidden></div>
+                        <a href="{% url 'view_time_table' %}" class="btn btn-danger px-3" id="btn-view-time-table"
+                           hidden>
+                            View your timetable now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- home ends -->
+
+    <script>
+        const heading = document.getElementById('heading');
+        const description = document.getElementById('description');
+        const spinner = document.getElementById('spinner');
+        const btnViewTimeTable = document.getElementById('btn-view-time-table');
+
+        //  GET request using fetch()
+        function callTimeTableGenerationApi() {
+            spinner.hidden = false;
+            description.hidden = false;
+
+            fetch("http://127.0.0.1:8000/generate-time-table-api/")
+                // Converting received data to JSON
+                .then(response => {
+                    console.log(response.status);
+                    spinner.hidden = true;
+
+                    if (response.status === 200) {
+                        heading.innerText = "Time Table is Generated";
+                        btnViewTimeTable.hidden = false;
+                        description.hidden = true;
+
+                    } else {
+                        heading.innerText = "Time Table is not Generated";
+                        description.innerText = "Some error occurred.";
+                    }
+                    return response.json();
+                })
+        }
+
+        const confirmation = confirm("Do you want to generate new time table?");
+        if (confirmation) {
+            callTimeTableGenerationApi();
+        } else {
+            window.location.href = '/';
+        }
+        console.log(confirmation)
+    </script>
+{% endblock %}
+
