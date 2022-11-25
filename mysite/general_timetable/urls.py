@@ -12,7 +12,8 @@ urlpatterns = [
     path('generate-time-table-api/', views.generate_time_table_api),
 
     # path('', views.home, name='home'),
-    path('tt/', views.main, name='main'),
+    # path('tt/', views.main, name='main'),
     path('unallocate/', views.unalloc_func, name='unalloc_func'),
+    path('unallocate/unallocate', views.unalloc_func, name='unalloc_func'),
     path('try/', views.try_sft, name='try_sft'),
 ]

@@ -36,10 +36,12 @@ class LabMaster(models.Model):  # example = lab1,lab2...
         return str(self.Lab_no)
 
 
-class SubjectMaster(models.Model):  # example = CP,DBMS...
+class SubjectMaster(models.Model):  # example = SC,DBMS...
     name = models.CharField(max_length=100)
     short_name = models.CharField(max_length=20)
     sem = models.ForeignKey('SemMaster', on_delete=models.CASCADE)
+    lab_rm = models.IntegerField(default=0)
+    lec_rm = models.IntegerField(default=0)
     max_lab = models.IntegerField(default=0)
     max_lec = models.IntegerField(default=0)
 
